@@ -1,0 +1,26 @@
+{
+  "name": "the_standardizer",
+  "version": "1.0.0",
+  "description": "Standardizes social API data models",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/artnotfound/the-standardizer.git"
+  },
+  "author": "manny404",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/artnotfound/the-standardizer/issues"
+  },
+  "homepage": "https://github.com/artnotfound/the-standardizer#readme",
+  "dependencies": {
+    "moment": "^2.11.1"
+  },
+  "devDependencies": {
+    "babel": "^6.3.26",
+    "babel-preset-es2015": "^6.3.13"
+  }
+}
