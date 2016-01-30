@@ -106,5 +106,3 @@ const convertTwitterPost = (p) => {
 }
 
 export {convertTwitterPost}
-
-
