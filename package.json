@@ -1,6 +1,6 @@
 {
   "name": "the-standardizer",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Standardizes social API data models",
   "main": "index.js",
   "scripts": {
