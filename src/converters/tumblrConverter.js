@@ -99,7 +99,7 @@ const getTumblrTitle = (p) => {
 const convertTumblrPost = (p) => {
   return {
     'title': getTumblrTitle(p),
-    'id': p.id,
+    'id': p.id.toString(),
     'url': getTumblrUrl(p),
     'priority': p.note_count > 100 ? p.note_count : 0,
     'text': getTumblrText(p),

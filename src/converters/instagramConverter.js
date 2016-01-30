@@ -44,7 +44,7 @@ const getInstagramUrl = (p) => {
 const convertInstagramPost = (p) => {
   return {
     'title': p.id,
-    'id': p.id,
+    'id': p.id.toString(),
     'url': getInstagramUrl(p),
     'priority': p.likes.count > 100 ? p.likes.count : 0,
     'text': getInstagramText(p),
