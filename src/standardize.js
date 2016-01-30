@@ -1,22 +1,22 @@
-import tumblrConverter from './converters/tumblrConverter'
-import twitterConverter from './converters/twitterConverter'
-import instagramConverter from './converters/instagramConverter'
+import {convertTumblrPost} from './converters/tumblrConverter'
+import {convertTwitterPost} from './converters/twitterConverter'
+import {convertInstagramPost} from './converters/instagramConverter'
 
 const standardize = (posts) => {
   return posts.map((p) => {
     if (p.id_str) {
-      return twitterConverter(p)
+      return convertTwitterPost(p)
     } else if (p.blog_name) {
-      return tumblrConverter(p)
+      return convertTumblrPost(p)
     } else if (p.filter) {
-      return instagramConverter(p)
+      return convertInstagramPost(p)
     }
   })
 }
 
 export default {
   'standardize': standardize,
-  'standardizeTumblr': tumblrConverter,
-  'standardizeTwitter': twitterConverter,
-  'standardizeInstagram': instagramConverter
+  'standardizeTumblr': convertTumblrPost,
+  'standardizeTwitter': convertTwitterPost,
+  'standardizeInstagram': convertInstagramPost
 }
