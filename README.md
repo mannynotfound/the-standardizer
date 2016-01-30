@@ -14,6 +14,39 @@ By standardizing our data model we can build components that render in a predict
 
 ## Usage
 
+### standardize all
+```js
+import {standardize} from 'the-standardizer'
+
+request('myapirequestroute.com', (err, resp) => {
+  if (err) console.error(err)
+  else {
+    // standardize the response assuming its an array of api objects
+    const standardizedPosts = standardize(resp)
+    // do something with resp
+    someOtherFunc(standardizedPosts)
+  }
+})
+```
+
+### standardize specific
+
+While `standardize` will automatically determine type for you, if you want to be specific you can import standardizers individually like so: 
+
+```js
+import {standardizeTumblr} from 'the-standardizer'
+
+request('tumblr.api.com/posts/whatever', (err, resp) => {
+  if (err) console.error(err)
+  else {
+    // standardize the Tumblr response
+    const standardizedPosts = standardizeTumblr(resp)
+    // do something with resp
+    someOtherFunc(standardizedPosts)
+  }
+})
+```
+
 Using any of the convert scripts and passing it an API object will produce a data model that looks like so:
 
 ```js
