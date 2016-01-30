@@ -4,6 +4,7 @@
   "description": "Standardizes social API data models",
   "main": "index.js",
   "scripts": {
+    "build": "npm run prepublish",
     "prepublish": "babel --loose all ./src/ -d ./lib"
   },
   "repository": {
