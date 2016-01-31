@@ -110,7 +110,7 @@ const convertTumblrPost = (p) => {
        'author': p.blog_name,
        'author_avatar': null,
        'author_url': `http://${p.blog_name}.tumblr.com`,
-       'url': p.url
+       'url': p.post_url
     },
     'stats': {
       'views': p.plays || null,
