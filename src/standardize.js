@@ -1,6 +1,7 @@
 import {convertTumblrPost} from './converters/tumblrConverter'
 import {convertTwitterPost} from './converters/twitterConverter'
 import {convertInstagramPost} from './converters/instagramConverter'
+import {convertGithubRepo} from './converters/githubConverter'
 
 const standardize = (posts) => {
   if (!Array.isArray(posts)) return posts
@@ -11,6 +12,8 @@ const standardize = (posts) => {
       return convertTumblrPost(p)
     } else if (p.filter) {
       return convertInstagramPos(p)
+    } else if (p.default_branch) {
+      return convertGithubRepo(p)
     } else return p
   })
 }

@@ -15,6 +15,7 @@ By standardizing our data model we can build components that render in a predict
 ## Usage
 
 ### standardize all
+
 ```js
 import {standardize} from 'the-standardizer'
 
@@ -28,6 +29,8 @@ request('myapirequestroute.com', (err, resp) => {
   }
 })
 ```
+
+> _NOTE: Expects an array of objects, usually from a single platform but mixed is fine too._
 
 ### standardize specific
 
@@ -47,7 +50,10 @@ request('tumblr.api.com/posts/whatever', (err, resp) => {
 })
 ```
 
-Using any of the convert scripts and passing it an API object will produce a data model that looks like so:
+> _NOTE: Expects a single object from a specific platform._
+
+
+Using any of the convert scripts will transform your objects into a data model that looks like so:
 
 ```js
 {
