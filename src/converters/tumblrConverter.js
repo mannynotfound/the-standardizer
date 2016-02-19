@@ -1,5 +1,13 @@
 import moment from 'moment'
 
+const stripHTML = (text) => {
+  return text.replace(/(<([^>]+)>)/ig,"")
+}
+
+const capitalize = (text) => {
+  return text.replace(/\w\S*/g, (t) => ( t.charAt(0).toUpperCase() + t.substr(1).toLowerCase() ));
+}
+
 const getTumblrMedia = (p) => {
   if (p.type !== 'photo' && p.type !== 'audio' && p.type !== 'video') {
     return null
@@ -98,11 +106,11 @@ const getTumblrTitle = (p) => {
 
 const convertTumblrPost = (p) => {
   return {
-    'title': getTumblrTitle(p),
+    'title': capitalize(getTumblrTitle(p)),
     'id': p.id.toString(),
     'url': getTumblrUrl(p),
     'priority': p.note_count > 100 ? p.note_count : 0,
-    'text': getTumblrText(p),
+    'text': stripHTML(getTumblrText(p)),
     'created_at': moment(p.date).format(),
     'type': getTumblrType(p),
     'source': {
