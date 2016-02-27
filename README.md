@@ -6,7 +6,7 @@
 # The Standardizer
 
 The Standardizer's goal is to standardize API data models. This is specific to Art404's needs, but these utility scripts will convert APIs from social platforms to one we expect.
-It currently supports Twitter, Tumblr, and Instagram.
+It currently supports GitHub, Behance, Twitter, Tumblr, and Instagram.
 
 ## Motivation
 
