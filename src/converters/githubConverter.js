@@ -3,7 +3,7 @@ import moment from 'moment'
 const convertGithubRepo = (p) => {
   return {
     'title': p.name,
-    'id': p.id,
+    'id': p.id.toString(),
     'url': p.name.replace(/ /g, '-'),
     'priority': 0,
     'text': p.description,
